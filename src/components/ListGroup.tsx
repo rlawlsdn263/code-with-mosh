@@ -3,9 +3,11 @@ import { useState } from "react";
 interface ListGroupInterface {
   items: string[];
   heading: string;
+  // (item: string) => void
+  onSelectItem: (item: string) => void; //onClick
 }
 
-function ListGroup({ items, heading }: ListGroupInterface) {
+function ListGroup({ items, heading, onSelectItem }: ListGroupInterface) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
@@ -24,6 +26,7 @@ function ListGroup({ items, heading }: ListGroupInterface) {
               }
               onClick={() => {
                 setSelectedIndex(index);
+                onSelectItem(item);
               }}
             >
               {item}
