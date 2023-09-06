@@ -1,11 +1,11 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   return (
     <div>
-      <Alert>
-        <span>경고창</span>이야
-      </Alert>
+      <Button mode="danger" onClick={() => console.log("클릭")}>
+        버튼
+      </Button>
     </div>
   );
 }
