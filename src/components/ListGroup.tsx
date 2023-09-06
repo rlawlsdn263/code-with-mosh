@@ -1,14 +1,16 @@
 import { useState } from "react";
 
-function ListGroup() {
-  const items = ["뉴욕", "샌프란시사코", "도쿄", "런던", "파리"];
+interface ListGroupInterface {
+  items: string[];
+  heading: string;
+}
 
-  //리액트훅
+function ListGroup({ items, heading }: ListGroupInterface) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>리스트 목록 비었음</p>}
       <ul className="list-group">
         {items.map((item, index) => {
